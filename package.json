@@ -1,0 +1,29 @@
+{
+  "name": "qiankun-demos",
+  "version": "1.0.0",
+  "description": "qiankun demo",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "clean-install": "rm -rf ./packages/*/node_modules node_modules pnpm i",
+    "build": "pnpm --filter \"./packages/*\" -r --stream run build",
+    "start": "pnpm --filter \"./packages/*\" -r --stream run start",
+    "format": "prettier --config ./.prettierrc.cjs --write -l \"./packages/**/*.{vue,js,ts,css,less}\""
+  },
+  "author": "jingjing20",
+  "license": "ISC",
+  "engines": {
+    "node": "^16 || ^18",
+    "pnpm": ">=7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "husky": "^8.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "coa": "2.0.2"
+    }
+  }
+}
