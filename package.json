@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "clean-install": "rm -rf ./packages/*/node_modules node_modules pnpm i",
-    "build": "pnpm --filter \"./packages/*\" -r --stream run build",
+    "clean-install": "rm -rf ./packages/*/node_modules node_modules && pnpm i",
+    "deploy:build": "pnpm --filter \"./packages/*\" -r --stream run build",
     "start": "pnpm --filter \"./packages/*\" -r --stream run start",
     "format": "prettier --config ./.prettierrc.cjs --write -l \"./packages/**/*.{vue,js,ts,css,less}\""
   },

@@ -9,7 +9,7 @@ const useDevMode = true;
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   build: {
-    outDir: path.join(__dirname, '../../../micro-app-demos/qiankun-demo/vite-child')
+    outDir: path.join(__dirname, '../../qiankun-demo/vite-child')
   },
   base: loadEnv(mode, process.cwd()).VITE_BASE_URL,
   server: {

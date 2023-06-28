@@ -1,7 +1,7 @@
 .DS_Store
 dist
 # Build dir
-micro-app-demos
+qiankun-demo
 node_modules
 .history
 
