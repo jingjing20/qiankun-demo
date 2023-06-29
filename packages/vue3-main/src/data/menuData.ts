@@ -1,11 +1,11 @@
-import type { AsyncComponentLoader } from 'vue'
+import type { AsyncComponentLoader } from 'vue';
 
 export interface Menu {
-  name: string
-  path?: string
-  component?: string | AsyncComponentLoader
-  key: number
-  children?: Menu[]
+  name: string;
+  path?: string;
+  component?: string | AsyncComponentLoader;
+  key: number;
+  children?: Menu[];
 }
 
 export const menuList: Menu[] = [
@@ -126,4 +126,4 @@ export const menuList: Menu[] = [
       }
     ]
   }
-]
+];

@@ -2,9 +2,9 @@ name: depoly
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
@@ -15,26 +15,26 @@ jobs:
         node-version: [18.10.0]
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install pnpm
-      uses: pnpm/action-setup@v2.2.2
-      with:
-        version: 7.13.5
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.13.5
 
-    - name: Build
-      run: |
-        pnpm i
-        pnpm run deploy:build
+      - name: Build
+        run: |
+          pnpm i
+          pnpm run deploy:build
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.QIANKUN_TOKEN }}
-        BRANCH: gh-pages
-        publish_dir: ./qiankun-demo
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.QIANKUN_TOKEN }}
+          BRANCH: gh-pages
+          publish_dir: ./qiankun-demo
