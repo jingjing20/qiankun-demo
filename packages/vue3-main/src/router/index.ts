@@ -54,7 +54,7 @@ router.beforeEach(async (to, from, next) => {
 });
 
 let mounting = false;
-router.afterEach(async (to) => {
+router.afterEach(async () => {
   const { apps } = useAppStore();
   const { user } = useUserStore();
   lastHash = location.hash;
@@ -65,10 +65,10 @@ router.afterEach(async (to) => {
   if (app) {
     const name = app.name;
     if (microAppMap.has(name)) {
-      microApp = microAppMap.get(name)!;
+      microApp = microAppMap.get(name);
       if (!mounting) {
         mounting = true;
-        await microApp.mount();
+        await microApp?.mount();
         mounting = false;
       }
     } else {

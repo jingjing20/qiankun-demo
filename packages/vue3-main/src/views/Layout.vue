@@ -3,7 +3,7 @@
     <a-layout-sider
       class="sider"
       width="250"
-      v-model:collapsed="collapsed"
+      v-model="collapsed"
       :trigger="null"
     >
       <div class="logo">
@@ -18,7 +18,7 @@
         mode="inline"
         theme="dark"
       >
-        <template v-for="item in menuList" :key="item.key">
+        <div v-for="item in menuList" :key="item.key">
           <template v-if="item.children">
             <sub-menu :key="item.key" :menu-info="item" />
           </template>
@@ -30,7 +30,7 @@
               </template>
             </a-menu-item>
           </template>
-        </template>
+        </div>
       </a-menu>
     </a-layout-sider>
     <a-layout class="right">
@@ -70,7 +70,7 @@
           </div>
         </a-spin>
       </a-layout-content>
-      <a-layout-footer class="footer"> Created by MAXLZ </a-layout-footer>
+      <a-layout-footer class="footer"> Created by jingjing20 </a-layout-footer>
     </a-layout>
   </a-layout>
 </template>
@@ -78,7 +78,7 @@
 <script lang="ts">
 export default {
   name: 'layout-page'
-}
+};
 </script>
 
 <script lang="ts" setup>
@@ -87,72 +87,69 @@ import {
   MenuFoldOutlined,
   GithubOutlined,
   ThunderboltOutlined
-} from '@ant-design/icons-vue'
-import { ref, reactive, watchEffect } from 'vue'
-import { useMenuStore } from '@/stores/menu'
-import { useRoute, useRouter } from 'vue-router'
-import { microAppLoading } from '@/utils/microAppLoading'
-import type { Menu } from '@/data/menuData'
+} from '@ant-design/icons-vue';
+import { ref, reactive, watchEffect } from 'vue';
+import { useMenuStore } from '@/stores/menu';
+import { useRoute, useRouter } from 'vue-router';
+import { microAppLoading } from '@/utils/microAppLoading';
+import type { Menu } from '@/data/menuData';
 
-const collapsed = ref(false)
-const selectedKeys = ref<number[]>([])
-const openKeys = reactive<number[]>([])
+const collapsed = ref(false);
+const selectedKeys = ref<number[]>([]);
+const openKeys = reactive<number[]>([]);
 const aliveView = reactive<string[]>([
   'Vue2KeepAliveView',
   'React18KeepAliveView',
   'ViteKeepAliveView'
-])
+]);
 
-const { menuList, flattenMenuList } = useMenuStore()
-const router = useRouter()
-const route = useRoute()
+const { menuList, flattenMenuList } = useMenuStore();
+const router = useRouter();
+const route = useRoute();
 
 function getParentKeys(menus: Menu[], key: number, parents: number[]) {
   for (const item of menus) {
     if (key === item.key) {
-      return true
+      return true;
     } else if (item.children && item.children.length > 0) {
-      parents.push(item.key)
-      const hasKey = getParentKeys(item.children, key, parents)
-      if (hasKey) return true
-      parents.pop()
+      parents.push(item.key);
+      const hasKey = getParentKeys(item.children, key, parents);
+      if (hasKey) return true;
+      parents.pop();
     }
   }
-  return false
+  return false;
 }
 
 function changeCollapsed() {
-  collapsed.value = !collapsed.value
+  collapsed.value = !collapsed.value;
 }
 
 function handleSelect({ key }: { key: number }) {
   if (key !== undefined) {
-    selectedKeys.value = [key]
-    const res = flattenMenuList.find((item) => item.key === key)
+    selectedKeys.value = [key];
+    const res = flattenMenuList.find((item) => item.key === key);
     if (res) {
-      router.push(res.path!)
+      router.push(res.path!);
     }
   }
 }
 
 function initKeys() {
-  const { fullPath } = route
-  const res = flattenMenuList.find((item) => item.path === fullPath)
+  const { fullPath } = route;
+  const res = flattenMenuList.find((item) => item.path === fullPath);
   if (res) {
-    selectedKeys.value = [res.key]
-    const parents: number[] = []
-    getParentKeys(menuList, res.key, parents)
-    openKeys.push(...parents)
+    selectedKeys.value = [res.key];
+    const parents: number[] = [];
+    getParentKeys(menuList, res.key, parents);
+    openKeys.push(...parents);
   }
 }
 
-watchEffect(initKeys)
+watchEffect(initKeys);
 
 function toGithub() {
-  window.open(
-    'https://github.com/jingjing20/micro-app-demos/tree/main/packages/qiankun-demo',
-    '_blank'
-  )
+  window.open('https://github.com/jingjing20/qiankun-demo/tree/main', '_blank');
 }
 </script>
 

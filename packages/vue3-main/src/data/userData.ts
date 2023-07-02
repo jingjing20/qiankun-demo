@@ -6,8 +6,8 @@ export interface User {
 }
 
 export const user: User = {
-  name: 'MAXLZ',
-  gender: 'male',
-  age: 12,
-  phone: '11111111111111'
+  name: 'jingda',
+  gender: 'hao',
+  age: 18,
+  phone: '888888888888888'
 };
