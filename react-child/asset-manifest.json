@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/qiankun-demo/react-child/static/css/main.337a9e78.css",
-    "main.js": "/qiankun-demo/react-child/static/js/main.a341c03c.js",
+    "main.js": "/qiankun-demo/react-child/static/js/main.3eeae014.js",
     "static/css/303.f1ef996b.chunk.css": "/qiankun-demo/react-child/static/css/303.f1ef996b.chunk.css",
     "static/js/303.d566d189.chunk.js": "/qiankun-demo/react-child/static/js/303.d566d189.chunk.js",
     "static/css/969.5ffca1ef.chunk.css": "/qiankun-demo/react-child/static/css/969.5ffca1ef.chunk.css",
@@ -24,7 +24,7 @@
     "static/css/193.a2c46768.chunk.css": "/qiankun-demo/react-child/static/css/193.a2c46768.chunk.css",
     "index.html": "/qiankun-demo/react-child/index.html",
     "main.337a9e78.css.map": "/qiankun-demo/react-child/static/css/main.337a9e78.css.map",
-    "main.a341c03c.js.map": "/qiankun-demo/react-child/static/js/main.a341c03c.js.map",
+    "main.3eeae014.js.map": "/qiankun-demo/react-child/static/js/main.3eeae014.js.map",
     "303.f1ef996b.chunk.css.map": "/qiankun-demo/react-child/static/css/303.f1ef996b.chunk.css.map",
     "303.d566d189.chunk.js.map": "/qiankun-demo/react-child/static/js/303.d566d189.chunk.js.map",
     "969.5ffca1ef.chunk.css.map": "/qiankun-demo/react-child/static/css/969.5ffca1ef.chunk.css.map",
@@ -48,6 +48,6 @@
   },
   "entrypoints": [
     "static/css/main.337a9e78.css",
-    "static/js/main.a341c03c.js"
+    "static/js/main.3eeae014.js"
   ]
 }
