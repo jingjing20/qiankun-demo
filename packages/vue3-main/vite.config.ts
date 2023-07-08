@@ -14,7 +14,12 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       port: 8081,
-      open: true
+      open: true,
+      client: {
+        overlay: {
+          runtimeErrors: false
+        }
+      }
     },
     base: loadEnv(mode, process.cwd()).VITE_BASE_URL,
     plugins: [

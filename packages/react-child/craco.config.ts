@@ -5,7 +5,12 @@ const CracoLessPlugin = require('craco-less');
 const config = {
   devServer: {
     port: 8092,
-    open: false
+    open: false,
+    client: {
+      overlay: {
+        runtimeErrors: false
+      }
+    }
   },
   style: {
     css: {

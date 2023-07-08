@@ -1,15 +1,23 @@
 <template>
-  <a-row>
-    <a-col>
-      <a-typography-title>主应用(style scope)</a-typography-title>
-    </a-col>
-  </a-row>
-  <a-row>
-    <a-col :span="12" class="first-col">class="first-col"<br />background-color: red;<br />font-size: 50px;</a-col>
-    <a-col :span="12" class="second-col">class="second-col"<br />background-color: green;<br />font-size: 50px;</a-col>
-  </a-row>
-  <div id="css-box1"></div>
-  <div id="css-box2"></div>
+  <div>
+    <a-row>
+      <a-col>
+        <a-typography-title>主应用(style scope)</a-typography-title>
+      </a-col>
+    </a-row>
+    <a-row>
+      <a-col :span="12" class="first-col"
+        >class="first-col"<br />background-color: red;<br />font-size:
+        50px;</a-col
+      >
+      <a-col :span="12" class="second-col"
+        >class="second-col"<br />background-color: green;<br />font-size:
+        50px;</a-col
+      >
+    </a-row>
+    <div id="css-box1"></div>
+    <div id="css-box2"></div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -50,7 +58,7 @@ onMounted(() => {
       entry: reactAppEntry,
       container: '#css-box2',
       props: {
-        path: '/reactApp/css-isolation'
+        path: '/css-isolation'
       }
     },
     {

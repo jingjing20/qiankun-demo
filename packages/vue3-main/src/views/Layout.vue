@@ -1,9 +1,10 @@
+<!-- eslint-disable vue/no-v-model-argument -->
 <template>
   <a-layout has-sider>
     <a-layout-sider
       class="sider"
       width="250"
-      v-model="collapsed"
+      v-model:collapsed="collapsed"
       :trigger="null"
     >
       <div class="logo">

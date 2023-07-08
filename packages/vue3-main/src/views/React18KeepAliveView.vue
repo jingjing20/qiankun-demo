@@ -23,7 +23,7 @@ onMounted(() => {
     entry: reactAppEntry,
     container: container.value!,
     props: {
-      path: '/reactApp/tab-view'
+      path: '/tab-view'
     }
   });
 });

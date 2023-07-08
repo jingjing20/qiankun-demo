@@ -18,7 +18,7 @@
 <script lang="ts">
 export default {
   name: 'CommunicationTest'
-}
+};
 </script>
 
 <style lang="less" scoped>

@@ -4,7 +4,7 @@
       <thunderbolt-outlined />
     </template>
     <template #title>{{ menuInfo.name }}</template>
-    <template v-for="item in menuInfo.children" :key="item.key">
+    <template v-for="item in menuInfo.children">
       <template v-if="item.children">
         <sub-menu :menu-info="item" :key="item.key" />
       </template>

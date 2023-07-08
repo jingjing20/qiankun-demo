@@ -1,15 +1,34 @@
 <template>
   <a-space direction="vertical" :size="40" class="box">
-    <a-alert message="左侧应用为Vue2子应用，右侧应用为React18子应用。" type="success" />
+    <a-alert
+      message="左侧应用为Vue2子应用，右侧应用为React18子应用。"
+      type="success"
+    />
     <a-row :gutter="20">
       <a-col :span="12">
-        <a-button v-if="app1" type="primary" danger @click="() => handleClick('vue2')">卸载Vue2应用</a-button>
-        <a-button v-else type="primary" @click="() => mountApp('vue2')">加载Vue2应用</a-button>
+        <a-button
+          v-if="app1"
+          type="primary"
+          danger
+          @click="() => handleClick('vue2')"
+          >卸载Vue2应用</a-button
+        >
+        <a-button v-else type="primary" @click="() => mountApp('vue2')"
+          >加载Vue2应用</a-button
+        >
         <div id="app-one"></div>
       </a-col>
       <a-col :span="12">
-        <a-button v-if="app2" type="primary" danger @click="() => handleClick('react18')">卸载React18应用</a-button>
-        <a-button v-else type="primary" @click="() => mountApp('react18')">加载React18应用</a-button>
+        <a-button
+          v-if="app2"
+          type="primary"
+          danger
+          @click="() => handleClick('react18')"
+          >卸载React18应用</a-button
+        >
+        <a-button v-else type="primary" @click="() => mountApp('react18')"
+          >加载React18应用</a-button
+        >
         <div id="app-two"></div>
       </a-col>
     </a-row>
@@ -33,8 +52,8 @@ import { reactAppEntry, vue2AppEntry } from '@/data/appData';
 
 const { user } = useUserStore();
 
-let app1 = ref<MicroApp | null>(null);
-let app2 = ref<MicroApp | null>(null);
+const app1 = ref<MicroApp | null>(null);
+const app2 = ref<MicroApp | null>(null);
 
 onMounted(() => {
   mountApp('vue2');
@@ -69,7 +88,7 @@ function mountApp(name: string) {
         entry: reactAppEntry,
         container: '#app-two',
         props: {
-          path: '/reactApp/communication-test'
+          path: '/communication-test'
         }
       },
       {

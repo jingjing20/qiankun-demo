@@ -23,7 +23,7 @@ onMounted(() => {
     entry: viteAppEntry,
     container: container.value!,
     props: {
-      path: '/viteApp/tab-view'
+      path: '/tab-view'
     }
   });
 });

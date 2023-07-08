@@ -23,7 +23,7 @@ onMounted(() => {
     entry: vue2AppEntry,
     container: container.value!,
     props: {
-      path: '/vue2App/tab-view'
+      path: '/tab-view'
     }
   });
 });
